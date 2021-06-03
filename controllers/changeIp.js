@@ -2,12 +2,10 @@
 
 const Router = require('koa-router')
 const router = Router()
- 
-/**
- * 获取用户当前环境下的公网ip
- */
-router.get('/', async ( ctx )=>{
+
+router.get('/change', async ( ctx )=>{
     const { 'x-forwarded-for': id } = ctx.request.headers
+    console.log('bbbbbbb', id, new Date())
     // ctx.body = {
     //     success: true,
     //     data: id

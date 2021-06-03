@@ -3,7 +3,9 @@
 const router = require('koa-router')()
 
 const getIp = require('../controllers/getIp')
+const changeIp = require('../controllers/changeIp')
 
-router.use('/api', getIp.routes(), getIp.allowedMethods())
+router.use('/', getIp.routes(), getIp.allowedMethods())
+router.use('/api', changeIp.routes(), changeIp.allowedMethods())
 
 module.exports = router
